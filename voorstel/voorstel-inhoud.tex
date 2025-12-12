@@ -40,8 +40,9 @@ Het is daarom belangrijk dat leveranciers van IT‑infrastructuur deze toestelle
 De Europese Unie heeft hiervoor een wettelijk kader uitgewerkt dat leveranciers verplicht om hun apparaten en infrastructuur te beveiligen.
 De Cyber Resilience Act (CRA) \autocite{CRA2024} en de NIS2‑richtlijn \autocite{NIS2024} zijn twee belangrijke wetgevingen die de beveiliging van digitale producten reguleren.
 
-Dit onderzoek richt zich op \textcolor{red}{hoe een embedded Linux edge‑systeem binnen een zorgnetwerk zo kan worden geconfigureerd dat het voldoet aan de vereisten van de Cyber Resilience Act en de NIS2‑richtlijn.}
-Er zal ook stil gestaan worden bij de testmogelijkheden om de effectiviteit van de configuratie te evalueren. 
+Dit onderzoek richt zich op \textcolor{red}{hoe een embedded Linux systeem binnen een zorgnetwerk zo kan worden geconfigureerd dat het voldoet aan de vereisten van de Cyber Resilience Act en de NIS2‑richtlijn.} 
+Het te configureren systeem moet ingeschakeld worden in een bestaande pipeline, zonder de werking ervan te verstoren.
+Het onderzoek is specifiek gericht op een casus van \textcolor{red}{zorg IT‑infrastructuurleverancier} Exensio, maar de resultaten kunnen ook toegepast worden door andere leveranciers in deze sector.
 
 %---------- Stand van zaken ---------------------------------------------------
 % Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. 
@@ -63,6 +64,33 @@ Er zal ook stil gestaan worden bij de testmogelijkheden om de effectiviteit van 
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
+
+\subsection{Wetgevend kader}
+Ten eerste is het belangrijk om het wetgevend kader rond cybersecurity in Belgische en Europese context goed te begrijpen.
+
+\subsubsection{Wat is MDR}
+Voor dit deel wordt de Medical Device Regulation (MDR) meer in detail onderzocht \autocite{MDR2025}. 
+Eerst wordt bepaald of het beoogde embedded Linux systeem kan worden beschouwd als een medisch hulpmiddel of een onderdeel daarvan, en dus binnen het toepassingsgebied van de MDR valt.
+Als blijkt dat het systeem onder de MDR valt, worden de meest relevante artikelen besproken. 
+Kijken naar CRA en NIS2 is dan niet nodig, aangezien de MDR strengere eisen stelt op het gebied van cyberbeveiliging.
+Wanneer het systeem niet onder de MDR valt, zal besproken worden waarom en worden de 2 volgende secties verder uitgewerkt.
+\subsubsection{Wat is CRA}
+In dit onderdeel wordt de Cyber Resilience Act (CRA) besproken \autocite{CRA2024}. 
+Er wordt extra duiding gegeven over welke artikels relevant zijn voor deze specifieke casus.
+
+\subsubsection{Wat is NIS2}
+In dit onderdeel wordt de NIS2-richtlijn besproken \autocite{NIS2025}. 
+Er wordt extra duiding gegeven over welke artikels relevant zijn voor deze specifieke casus.
+
+\subsection{Technische concepten}
+Nadat het duidelijk is welke artikels van toepassing zijn, worden de technische concepten onderzocht die nodig zijn om aan deze vereisten te voldoen.
+Het systeem is een x86-based Debian Linux systeem en moet een minimale userspace hebben. 
+\subsubsection{Debian System Hardening}
+Tijdens het configureren van het systeem zal er gebruik worden gemaakt van systeemhardening technieken specifiek voor Debian-gebaseerde systemen. 
+De configuratie zal maximaal gebaseerd zijn op officiële documentatie om zo betrouwbaar mogelijk te zijn, bijvoorbeeld uit de Debian Administrator's Handbook \autocite{Hertzog2020}.
+\subsubsection{Zero-Trust best practices}
+Om de Zero-Trust architectuur en mentaliteit te implementeren, worden er best practices onderzocht \autocite{Reddy2025} en \autocite{NIST2025}.   
+
 
 % 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
@@ -100,26 +128,26 @@ Er zal ook stil gestaan worden bij de testmogelijkheden om de effectiviteit van 
 \subsection{Verwerken tot requirements}
 
   In deze fase worden de bevindingen van de literatuurstudie gemapt naar een concreet technisch plan. 
-  Dit plan zal de specifieke configuratie-eisen bevatten waaraan het Linux edge-systeem moet voldoen om te voldoen aan CRA en NIS2. 
-  Ook worden de zero-trust principes en systeemhardening technieken opgesteld die topasselijk zijn voor dit systeem.
+  Dit plan zal de specifieke configuratie-eisen bevatten waaraan het Linux systeem moet voldoen om te voldoen aan CRA en NIS2. 
+  Ook worden de zero-trust principes en systeemhardening technieken opgesteld die toepasbaar zijn voor dit systeem.
   Dit omvat het technisch ontwerp van hoe het systeem zal geconfigureerd worden. Deze fase zal ongeveer 3 weken duren.
 
 \subsection{Requirements configureren}
 
-  Tijdens de implementatie fase zal het plan uit de vorige fase worden omgezet naar een daadwerkelijke configuratie van het Linux edge-systeem.  
+  Tijdens de implementatie fase zal het plan uit de vorige fase worden omgezet naar een daadwerkelijke configuratie van het Linux systeem.  
   Dit omvat het implementeren van zero-trust principes en systeemhardening technieken compliant aan CRA en NIS2. 
-  Het proof of conecpt zal worden opgezet in een gesimuleerd zorgnetwerk zodat het zo goed mogelijk de werkelijkheid nabootst. 
+  Het proof of concept zal worden opgezet in een gesimuleerd zorgnetwerk zodat het zo goed mogelijk de werkelijkheid nabootst. 
   Deze fase zal ongeveer 4 tot 5 weken duren.
 
 \subsection{Configuratie testen}  
 
   In deze fase zal het proof of concept worden getest om te verzekeren dat het voldoet aan de vooropgestelde requirements. 
-  De pentesting tool die hiervoor gebruikt zal worden wordt ter beschikking gesteld door Exensio. De resultaten van de pentest zullen gedocumenteerd. 
+  De pentesting tool die hiervoor gebruikt zal worden wordt ter beschikking gesteld door Exensio. De resultaten van de pentest zullen gedocumenteerd worden. 
   Deze fase zal ongeveer 1 week duren.
 
 \subsection{Configuratie evalueren}  
 
-  In de laatste fase zal de geconfigureerde systeem worden geëvalueerd op basis van de testresultaten.
+  In de laatste fase zal het geconfigureerde systeem worden geëvalueerd op basis van de testresultaten.
   Eventuele tekortkomingen zullen worden geïdentificeerd en er zullen aanbevelingen worden gedaan voor verdere verbeteringen.
   Deze fase zal ongeveer 1 week duren.
 
@@ -137,5 +165,5 @@ Er zal ook stil gestaan worden bij de testmogelijkheden om de effectiviteit van 
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Het voornaamste resultaat van dit onderzoek is een technisch gedocumenteerde configuratie voor het specifieke embedded Linux edge-systemen die voldoet aan de vereisten van CRA en NIS2. 
-Dit onderzoek zal echter een basis zijn voor andere infrastructuur leveranciers die soortgelijke systemen willen implementeren die commpliant moeten zijn met deze regelgeving.
+Het voornaamste resultaat van dit onderzoek is een technisch gedocumenteerde configuratie voor het specifieke Linux systeem dat voldoet aan de vereisten van CRA en NIS2. 
+Dit onderzoek zal echter een basis zijn voor andere infrastructuurleveranciers die soortgelijke systemen willen implementeren die compliant moeten zijn met deze regelgeving.
