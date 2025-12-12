@@ -70,21 +70,23 @@ Ten eerste is het belangrijk om het wetgevend kader rond cybersecurity in Belgis
 
 \subsubsection{Wat is MDR}
 Voor dit deel wordt de Medical Device Regulation (MDR) meer in detail onderzocht \autocite{MDR2025}. 
-Eerst wordt bepaald of het beoogde embedded Linux systeem kan worden beschouwd als een medisch hulpmiddel of een onderdeel daarvan, en dus binnen het toepassingsgebied van de MDR valt.
+Eerst wordt bepaald of het embedded Linux systeem kan worden beschouwd als een medisch hulpmiddel of een onderdeel daarvan, en dus binnen het toepassingsgebied van de MDR valt.
 Als blijkt dat het systeem onder de MDR valt, worden de meest relevante artikelen besproken. 
 Kijken naar CRA en NIS2 is dan niet nodig, aangezien de MDR strengere eisen stelt op het gebied van cyberbeveiliging.
-Wanneer het systeem niet onder de MDR valt, zal besproken worden waarom en worden de 2 volgende secties verder uitgewerkt.
+Wanneer het systeem niet onder de MDR valt, zal besproken worden waarom en worden de 2 volgende secties verder uitgewerkt. 
+In het vervolg van het onderzoek wordt er momenteel van uitgegaan dat het systeem niet onder de MDR valt.
+
 \subsubsection{Wat is CRA}
 In dit onderdeel wordt de Cyber Resilience Act (CRA) besproken \autocite{CRA2024}. 
 Er wordt extra duiding gegeven over welke artikels relevant zijn voor deze specifieke casus.
 
 \subsubsection{Wat is NIS2}
-In dit onderdeel wordt de NIS2-richtlijn besproken \autocite{NIS2025}. 
+In dit onderdeel wordt de NIS2-richtlijn besproken \autocite{NIS2024}. 
 Er wordt extra duiding gegeven over welke artikels relevant zijn voor deze specifieke casus.
 
 \subsection{Technische concepten}
 Nadat het duidelijk is welke artikels van toepassing zijn, worden de technische concepten onderzocht die nodig zijn om aan deze vereisten te voldoen.
-Het systeem is een x86-based Debian Linux systeem en moet een minimale userspace hebben. 
+Het systeem is een x86-based Debian Linux systeem en moet een minimale userspace hebben. De configuratie zal
 \subsubsection{Debian System Hardening}
 Tijdens het configureren van het systeem zal er gebruik worden gemaakt van systeemhardening technieken specifiek voor Debian-gebaseerde systemen. 
 De configuratie zal maximaal gebaseerd zijn op officiële documentatie om zo betrouwbaar mogelijk te zijn, bijvoorbeeld uit de Debian Administrator's Handbook \autocite{Hertzog2020}.
@@ -134,7 +136,7 @@ Om de Zero-Trust architectuur en mentaliteit te implementeren, worden er best pr
 
 \subsection{Requirements configureren}
 
-  Tijdens de implementatie fase zal het plan uit de vorige fase worden omgezet naar een daadwerkelijke configuratie van het Linux systeem.  
+  Tijdens de implementatiefase zal het plan uit de vorige fase worden omgezet naar een daadwerkelijke configuratie van het Linux systeem.  
   Dit omvat het implementeren van zero-trust principes en systeemhardening technieken compliant aan CRA en NIS2. 
   Het proof of concept zal worden opgezet in een gesimuleerd zorgnetwerk zodat het zo goed mogelijk de werkelijkheid nabootst. 
   Deze fase zal ongeveer 4 tot 5 weken duren.
@@ -142,7 +144,7 @@ Om de Zero-Trust architectuur en mentaliteit te implementeren, worden er best pr
 \subsection{Configuratie testen}  
 
   In deze fase zal het proof of concept worden getest om te verzekeren dat het voldoet aan de vooropgestelde requirements. 
-  De pentesting tool die hiervoor gebruikt zal worden wordt ter beschikking gesteld door Exensio. De resultaten van de pentest zullen gedocumenteerd worden. 
+  De pentesting-tool die hiervoor gebruikt zal worden wordt ter beschikking gesteld door Exensio. De resultaten van de pentest zullen gedocumenteerd worden. 
   Deze fase zal ongeveer 1 week duren.
 
 \subsection{Configuratie evalueren}  
