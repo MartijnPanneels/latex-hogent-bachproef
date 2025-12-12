@@ -48,18 +48,24 @@
 \keywords{compliance, CRA, NIS2, configuration, medical sector}
 
 \begin{document}
-
-\begin{abstract}
   % Hier schrijf je de samenvatting van je voorstel, als een doorlopende tekst van één paragraaf. Let op: dit is geen inleiding, maar een samenvattende tekst van heel je voorstel met inleiding 
   % (voorstelling, kaderen thema), probleemstelling en centrale onderzoeksvraag, onderzoeksdoelstelling (wat zie je als het concrete resultaat van je bachelorproef?), 
   % voorgestelde methodologie, verwachte resultaten en meerwaarde van dit onderzoek
   % (wat heeft de doelgroep aan het resultaat?).
+\begin{abstract}
 
   Ziekenhuizen zetten steeds meer slimme toestellen in, zoals sensoren in patiëntenkamers.
-  Deze toestellen zijn kwetsbaar voor cyberaanvallen omdat ze netwerkverbonden zijn en gevoelige patiëntendata verwerken. 
+  \textcolor{red}{Deze toestellen zijn kwetsbaar voor cyberaanvallen omdat ze netwerkverbonden zijn en gevoelige patiëntendata verwerken.} 
   De Cyber Resilience Act (CRA) en NIS2-richtlijn stellen strikte beveiligingseisen aan dergelijke systemen. 
-  Dit onderzoek ontwikkelt een geconfigureerd embedded Linux systeem voor zorg IT-infrastructuurleverancier Exensio dat voldoet aan deze wetgeving.
+  De centrale onderzoeksvraag van dit voorstel is:
+  \textcolor{red}{Hoe kan een embedded Debian Linux-systeem van de zorg IT-infrastructuurleverancier Exensio Exensio binnen een zorgnetwerk zo worden geconfigureerd dat het voldoet aan de vereisten van de Cyber Resilience Act en NIS2-richtlijn?}
+  Om deze vraag te beantwoorden, wordt er een mapping gemaakt van de relevante wettelijke vereisten naar technische configuratie-eisen. 
+  Hierna worden die toegepast op een embedded Linux-systeem volgens het Zero Trust-principe. 
+  Eens geconfigureerd wordt het toestel opgezet binnen een gesimuleerd zorgnetwerk en worden de prestaties ervan geëvalueerd.
   Dit gebeurt met focus op Debian system hardening en Zero Trust-principes, zonder de bestaande data-pipeline te verstoren.
+  Het onderzoek zal leiden tot een technisch gedocumenteerde configuratie die effectief voldoet aan de wetgeving en geplaatst kan worden in de bestaande pipeline.
+  De verwachte conclusie is dat deze configuratie een basis zal zijn voor andere infrastructuurleveranciers die soortgelijke, compliante systemen willen implementeren.
+
 \end{abstract}
 
 \tableofcontents
